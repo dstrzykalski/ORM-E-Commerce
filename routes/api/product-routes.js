@@ -7,9 +7,12 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 router.get('/', (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
+  //same process as the category.routes 
   Product.findAll({
+    //category and tag are included in the product
     include: [Category, {
       model: Tag,
+      //through the product tag
       through: ProductTag
     }]
   }).then(data => {
@@ -26,8 +29,10 @@ router.get('/:id', (req, res) => {
   // be sure to include its associated Category and Tag data
   product.findOne({
     where: {
+      //id is the assigned value of the id parameter
       id: req.params.id
     },
+    //category and tag are included in the product
     include: [Category, {
       model: Tag,
       through: ProductTag
@@ -50,7 +55,7 @@ router.post('/', (req, res) => {
       tagIds: [1, 2, 3, 4]
     }
 
-
+//same process as above
   Product.create(req.body)
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
@@ -81,6 +86,7 @@ router.put('/:id', (req, res) => {
       id: req.params.id,
     },
   })
+// .then method and if statement to check if there are any tagIds
     .then((product) => {
       if (req.body.tagIds && req.body.tagIds.length) {
         
@@ -118,6 +124,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
+//same process used above
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
   Product.destroy({
