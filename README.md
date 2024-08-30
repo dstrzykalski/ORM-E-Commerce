@@ -2,6 +2,7 @@
 # ORM E-Commerce
 
 Challenge 11
+
 Video Link - <https://drive.google.com/file/d/16knG4n7nMMWN5s4ZB0BhhmLhoEPtbVOy/view>
 
 This repository contains the code for the Module 13 Challenge, E-Commerce application. This application was built with an Object-Relational Mapping (ORM) approach. The main goal of this assignment was to test our ability to create API routes using Express and have those routes respond properly to post, put, delete and get requests.
@@ -31,14 +32,15 @@ Once the server is launched on localhost:3001, Open Insomnia and check the route
 ## Author
 
 Daved Strzykalski
+
 Github Profile - dstrzykalski
 
 ## Resources
 
--Starter Code Given
--Class Content
--Stack Overflow
--Tutor Assistance
+- Starter Code Given
+- Class Content
+- Stack Overflow
+- Tutor Assistance
 
 ## License
 
